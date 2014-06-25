@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LearnRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="main">
+		<h3>Main</h3> 
+		<p>Welcome!</p>	
+		<% content_for :sidebar do %>		
+		<% end %>
+		<%= yield %>
+	</div>
+	<div class="sidebar">
+		<h3>Contact Info</h3> 
+		<p>Email: me@example.com</p>
+		<%= 2+2 %>		
+		<% yield :sidebar %>		
+	</div>			
+</body>
+</html>
